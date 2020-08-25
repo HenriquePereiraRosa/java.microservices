@@ -1,0 +1,35 @@
+
+server:
+  port: 8081
+
+#remove when config Server is enable
+spring:
+  application:
+    name: 'user'
+  datasource:
+    password: r00tr00t
+    username: root
+    url: jdbc:mysql://localhost:3306/credta?useTimezone=true&serverTimezone=UTC
+  jpa:
+    hibernate:
+      #ddl-auto: update # credate table if not exisists
+    show-sql: true
+
+logging:
+  level:
+    root: debug
+    br.com.test.microservice.user.controller: debug
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost:8088/user
+      

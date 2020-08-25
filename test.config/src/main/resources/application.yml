@@ -1,0 +1,15 @@
+
+server:
+  port: 8888
+  
+spring:
+  application:
+    name: 'config'
+  cloud:
+    config:
+      server:
+        encrypt:
+            enabled: false
+        git:
+          uri: https://github.com/HenriquePereiraRosa/microservice-config-resources/ # config user and pass
+          search-paths: user, userdetails
